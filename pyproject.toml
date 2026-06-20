@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ocr-tool"
+version = "1.0.0"
+description = "离线图片OCR文字提取命令行工具 - 支持中英文识别、批量处理、图片预处理"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "OCR Tool Developer"}
+]
+dependencies = [
+    "click>=8.1.0",
+    "paddleocr>=2.7.0",
+    "paddlepaddle>=2.5.0",
+    "Pillow>=9.0.0",
+    "pillow-heif>=0.13.0",
+    "opencv-python>=4.5.0",
+    "numpy>=1.21.0",
+    "tqdm>=4.65.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+ocr-tool = "ocr_tool.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
